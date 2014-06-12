@@ -15,8 +15,8 @@ window.onload = function() {
 
       showInLegend: false,
       dataPoints: [
-        { y: 6, label: "Web", info: "Powderhook android app, personal projects" },
-        { y: 4, label: "Mobile" },
+        { y: 4, label: "Web", info: "Powderhook android app, personal projects" },
+        { y: 8, label: "Mobile" },
         { y: 2, label: "Desktop" }
       ]
     }
