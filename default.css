@@ -1,11 +1,31 @@
-html, body {
-	min-height: 100%;
+html { 
+	background: rgba(0,0,0,0.0);
+  background: url(assets/mountains.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-.content {
-	background-color: #0AA8D6;
+html, body {
+	min-height: 100%;
 	color: #fff;
 	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+section .container {
+	padding: 100px 20px;
+}
+
+section.emph1 {
+	background: #0C226D;
+}
+section.emph2 {
+	background: #3382F9;	
+}
+section.emph3 {
+	background : #958F9A;
 }
 
 #tiles-showcase .tile {
