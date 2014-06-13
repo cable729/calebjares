@@ -3,14 +3,25 @@
 
 	window.onload = function(){
 		$('#tiles-showcase .tile').each(function(){$(this).hoverdir();});
-		// setBannerHeight();
-		setupSmoothScroll();
 		$('#header-image .background-img').imageloader({
 			background: true,
 			callback: function(e){
 				$(e).fadeIn(1000);
 			}
-		}).hide();    
+		}).hide();
+		$('.tile img').imageloader();
+		$('.title-box').transition({ y:'220px' });
+		// var element = $("#header-image .arrow");
+	 //    (function(){
+	 //        element
+	 //        	.transition({scale:2})
+	 //        	.transition({
+	 //        		scale: 1,
+	 //        		callback: arguments.callee
+	 //        	});
+	 //    }());
+
+		setupSmoothScroll();
 	};
 	window.onresize = function(){
 		setBannerHeight();
