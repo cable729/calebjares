@@ -10,6 +10,12 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
     <link href="default.css" rel="stylesheet">
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="scripts/modernizr-latest.js"></script>
+    <script src="scripts/jquery.hoverdir.js"></script>
+    <script src="scripts/jquery.imageloader.js"></script>
     <script src="scripts/default.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -22,7 +28,7 @@
   <body>
     <div id="header-image">
       <div class="blur-layer"></div>
-      <div class="background-img"></div>
+      <div class="background-img" data-src="assets/mountains-blur-12.png">&nbsp</div>
     </div>
     <!-- <a href="#first" style="position:absolute; color:#fff;">SCROLL DOWN</a> -->
     <section id="first" class="emph1">
@@ -99,11 +105,15 @@
       </div>
     </section>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script src="scripts/modernizr-latest.js"></script>
-    <script src="scripts/jquery.hoverdir.js"></script>
+    <script>
+      $('#header-image .background-img').imageloader({
+        background: true,
+        callback: function(e){
+          $(e).fadeIn();
+        }
+      });
+    </script>
   </body>
 </html>

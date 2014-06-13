@@ -1,4 +1,5 @@
 (function(){
+
 	window.onload = function(){
 		$('#tiles-showcase .tile').each(function(){$(this).hoverdir();});
 		setBannerHeight();
@@ -9,6 +10,8 @@
 	};
 	function setBannerHeight(){
 		$('#header-image').height(window.innerHeight);
+		// $('#header-image .background-img').css('background-image', 'url(assets/mountains-blur-12.png)');
+
 		$('.blur-layer').show();
 	};
 
