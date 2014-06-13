@@ -8,7 +8,7 @@
 		setBannerHeight();
 	};
 	function setBannerHeight(){
-		$('#first').css('margin-top', window.innerHeight.toString() + "px");
+		$('#header-image').height(window.innerHeight);
 	};
 
 	function setupSmoothScroll(){
