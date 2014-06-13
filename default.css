@@ -5,12 +5,9 @@ html, body {
 	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
 }
 
-.title-box {
-	margin-top: 220px;
-	text-align: center;
-	color: #fff;
+#header-image {
+	height: 2000px;
 }
-
 #header-image .background-img {
 	display: block;
 	position: fixed;
@@ -30,6 +27,11 @@ html, body {
 	z-index: -50;
 	background-position: top left;
 	background-repeat: repeat;
+}
+#header-image .title-box {
+	margin-top: 220px;
+	text-align: center;
+	color: #fff;
 }
 
 section .container {
