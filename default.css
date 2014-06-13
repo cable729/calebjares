@@ -30,6 +30,7 @@
 	background-image: url(assets/layer.png);
 	background-position: top left;
 	background-repeat: repeat;
+	display: none;
 }
 
 html, body {

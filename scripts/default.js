@@ -9,6 +9,7 @@
 	};
 	function setBannerHeight(){
 		$('#header-image').height(window.innerHeight);
+		$('.blur-layer').show();
 	};
 
 	function setupSmoothScroll(){
