@@ -1,0 +1,28 @@
+html, body {
+	min-height: 100%;
+}
+
+.content {
+	background-color: #0AA8D6;
+	color: #fff;
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+#tiles-showcase .tile {
+	margin-bottom: 18px;
+	position: relative;
+	background: rgba(255,255,255,0.5);
+}
+#tiles-showcase .tile a {
+	overflow: hidden;
+}
+#tiles-showcase a, #tiles-showcase img {
+	display: block;
+	position: relative;
+}
+#tiles-showcase .tile .overlay {
+	background: rgba(255,255,255,0.9);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
