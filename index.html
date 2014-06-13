@@ -26,10 +26,15 @@
     <![ENDIF]-->
   </head>
   <body>
-    <div id="header-image">
-      <div class="blur-layer"></div>
+    <div id="header-image" style="height:5000px">
+      <div class="blur-layer" data-src="assets/layer.png"></div>
       <div class="background-img" data-src="assets/mountains-blur-12.png">&nbsp</div>
+      <div class="background-color"></div>
     </div>
+    <script>
+      $('#header-image').height(window.innerHeight);
+      $('#header-image .blur-layer').imageloader({ background: true });
+    </script>
     <!-- <a href="#first" style="position:absolute; color:#fff;">SCROLL DOWN</a> -->
     <section id="first" class="emph1">
       <div class="container">
@@ -107,13 +112,5 @@
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-    <script>
-      $('#header-image .background-img').imageloader({
-        background: true,
-        callback: function(e){
-          $(e).fadeIn();
-        }
-      });
-    </script>
   </body>
 </html>

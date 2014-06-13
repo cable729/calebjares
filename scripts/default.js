@@ -1,9 +1,16 @@
+
 (function(){
 
 	window.onload = function(){
 		$('#tiles-showcase .tile').each(function(){$(this).hoverdir();});
-		setBannerHeight();
+		// setBannerHeight();
 		setupSmoothScroll();
+		$('#header-image .background-img').imageloader({
+			background: true,
+			callback: function(e){
+				$(e).fadeIn(1000);
+			}
+		}).hide();    
 	};
 	window.onresize = function(){
 		setBannerHeight();
