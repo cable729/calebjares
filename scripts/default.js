@@ -11,21 +11,26 @@
 		}).hide();
 		$('.tile img').imageloader();
 		$('.title-box').transition({ y:'220px' });
-		// var element = $("#header-image .arrow");
-	 //    (function(){
-	 //        element
-	 //        	.transition({scale:2})
-	 //        	.transition({
-	 //        		scale: 1,
-	 //        		callback: arguments.callee
-	 //        	});
-	 //    }());
+		var element = $("#header-image .arrow");
+		animateChevron();
 
 		setupSmoothScroll();
 	};
 	window.onresize = function(){
 		setBannerHeight();
 	};
+
+	function animateChevron(){
+		var chevron = $('#header-image .arrow');
+		animateIt();
+		function animateIt(){
+			chevron
+				.transition({y:-10}, 1000, 'ease')
+				.transition({y:0}, 1000, animateIt);
+		};
+	};
+
+
 	function setBannerHeight(){
 		$('#header-image').height(window.innerHeight);
 		// $('#header-image .background-img').css('background-image', 'url(assets/mountains-blur-12.png)');
