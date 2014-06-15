@@ -9,7 +9,7 @@ html, body {
 	height: 2000px;
 	position: relative;
 }
-#header-image .background-img {
+.background-img {
 	display: block;
 	position: fixed;
 	width: 100%;
@@ -18,6 +18,9 @@ html, body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: top center;
+}
+.background-img:not(.default) {
+	display: none;
 }
 #header-image .blur-layer {
 	position: absolute;
