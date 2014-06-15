@@ -53,13 +53,13 @@ section .container {
 }
 
 section.emph1 {
-	background: #0C226D;
+	background: #0E53A7;
 }
 section.emph2 {
-	background: #3382F9;	
+	background: #FFC700;	
 }
 section.emph3 {
-	background : #958F9A;
+	background : #FF5C00;
 }
 
 #tiles-showcase .tile {
