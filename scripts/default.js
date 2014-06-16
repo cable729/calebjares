@@ -1,7 +1,9 @@
 (function(){
 	window.onload = function(){
 		$('.tile').each(function(){$(this).hoverdir();});
-		$('.tile img').imageloader();
+		$('.tile img').imageloader({
+			background: true
+		});
 		$('.title-box').transition({ y:'220px' });
 
 		new HeaderViewModel().onload();
