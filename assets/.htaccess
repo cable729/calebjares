@@ -1,2 +1,0 @@
-ExpiresByType image/png "access plus 600 minutes"
-ExpiresByType image/jpg "access plus 600 minutes"
