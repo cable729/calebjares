@@ -71,8 +71,8 @@
 				imgDivs.eq(pointer).fadeOut(2000);
 				imgDivs.eq((pointer + 1) % imgDivs.length).fadeIn(2000);
 				pointer = (pointer + 1) % imgDivs.length;
-			}, 10000);
-		}
+			}, 8000);
+		};
 
 		function preloadImages(){
 			var numLoaded = 0;
@@ -85,6 +85,6 @@
 					}
 				}
 			})
-		}
+		};
 	}
 })();
