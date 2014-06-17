@@ -1,41 +1,26 @@
 (function(){
 	window.onload = function(){
-		$('.tile').each(function(){$(this).hoverdir();});
-		$('.tile img').imageloader({
-			background: true
-		});
-		$('.title-box').transition({ y:'220px' });
-
-		new HeaderViewModel().onload();
-
+		$('#title-box').transition({ y: '220px' });
 		animateChevron();
 		setupSmoothScroll();
+		preloadImages();
 	};
 	window.onresize = function(){
-		setBannerHeight();
+		$('#intro-screen').height(window.innerHeight);
 	};
 
 	function animateChevron(){
-		var chevron = $('#header-image .arrow');
+		var chevron = $('.arrow');
 		animateIt();
 		function animateIt(){
 			chevron
-				.transition({y:-10}, 1000, 'ease')
-				.transition({y:0}, 1000, animateIt);
+				.transition({ y: -10 }, 1000, 'ease')
+				.transition({ y: 0 }, 1000, animateIt);
 		};
 	};
 
 	function preloadImages(){
-		$('.background-img:not(.default)').imageloader({
-			background: true,
-		});
-	};
-
-	function setBannerHeight(){
-		$('#header-image').height(window.innerHeight);
-		// $('#header-image .background-img').css('background-image', 'url(assets/mountains-blur-12.png)');
-
-		$('.blur-layer').show();
+		$('.slideshow-image').imageloader({ background: true, });
 	};
 
 	function setupSmoothScroll(){
@@ -53,40 +38,26 @@
 	  });
 	};
 
-	function HeaderViewModel(){
-		var that = this;
-
-		this.onload = function(){
-			$('.background-img:first').imageloader({
-				background: true,
-				callback: function(e){
-					$(e).fadeIn(1000);
-					preloadImages();
+	function preloadImages(){
+		var numLoaded = 0;
+		var imgDivs = $('.slideshow-image:not(:first)');
+		imgDivs.hide().imageloader({
+			background: true,
+			callback: function(e){
+				if (++numLoaded === imgDivs.length){
+					startSlideshow();
 				}
-			}).hide();
-		};
+			}
+		})
+	};
 
-		function startSlideshow(){
-			var imgDivs = $('.background-img');
-			var pointer = 0;
-			setInterval(function(){
-				imgDivs.eq(pointer).fadeOut(2000);
-				imgDivs.eq((pointer + 1) % imgDivs.length).fadeIn(2000);
-				pointer = (pointer + 1) % imgDivs.length;
-			}, 8000);
-		};
-
-		function preloadImages(){
-			var numLoaded = 0;
-			var imgDivs = $('.background-img:not(:first)');
-			imgDivs.imageloader({
-				background: true,
-				callback: function(e){
-					if (++numLoaded === imgDivs.length){
-						startSlideshow();
-					}
-				}
-			})
-		};
-	}
+	function startSlideshow(){
+		var imgDivs = $('.slideshow-image');
+		var pointer = 0;
+		setInterval(function(){
+			imgDivs.eq(pointer).fadeOut(2000);
+			imgDivs.eq((pointer + 1) % imgDivs.length).fadeIn(2000);
+			pointer = (pointer + 1) % imgDivs.length;
+		}, 8000);
+	};
 })();
