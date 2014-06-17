@@ -1,6 +1,5 @@
 (function(){
 	window.onload = function(){
-		$('#title-box').transition({ y: '220px' });
 		animateChevron();
 		setupSmoothScroll();
 		preloadImages();
