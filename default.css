@@ -3,9 +3,9 @@ html, body {
 	color: #fff;
 	font-family: "Lato", "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
 }
+h1 { font-size: 62px; }
 
 #title-box { text-align: center; }
-#title-box h1 { font-size: 62px; }
 #intro-screen { height: 2000px; position: relative; }
 #intro-screen h1 { font-weight: 100; }
 

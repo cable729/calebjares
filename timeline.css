@@ -10,9 +10,10 @@
   /*thanks to
      https://twitter.com/JacoKoster
   */
-  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAEElEQVQIW2NMTEz8z8gABAAPKwIlXWq1kgAAAABJRU5ErkJggg==);
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMwWMjwEwADoQHL6xkJXwAAAABJRU5ErkJggg==");
   background-repeat: repeat-y;
   background-position: 50% 0;
+  background-size: 5px 100%;
   /*
     border-box ftw, inside .timeline now to prevent
     screwing up your CSS rule if you are not using
@@ -21,7 +22,7 @@
 
     thanks to https://github.com/jimmyandrade
   */
-  /* 
+  /*
     elements 1,(2),3,(4), etc.
     elements in brackets inherit these properties, some are overridden below (2n)
     beginning at 0
