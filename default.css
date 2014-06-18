@@ -41,15 +41,28 @@ html, body {
 .arrow i { font-size: 44px }
 
 
-
-#about-me {
-  padding: 60px 0;
-  background-color: #313030;
-  color: #000;
+.fancy-icon {
+  text-align: center;
+  font-size: 22px;
+  line-height: 56px;
+  height: 60px;
+  width: 60px;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 4px;
+  margin-right: 20px;
 }
+
+.icon-row p, .icon-row span {
+  height: 100%;
+  line-height: 60px;
+}
+.icon-row .fancy-icon {
+  float: left;
+}
+
+
 .focus {
-  background: #fff;
-  color: #222;
   max-width: 560px;
   margin-left: auto;
   margin-right: auto;
@@ -58,10 +71,17 @@ html, body {
   border-color: #000;
   border-radius: 5px;
 }
+.focus.dark {
+  background-color: #313030;
+  color: #fff;
+}
+.focus.dark b {
+  color: #ff452d;
+}
 .block-header {
   font-family: 'Audiowide';
   text-align: center;
-  margin-top: 0;
+  margin: 0 20px 10px;
   background-color: #ff452d;
   color: #fff;
   border-radius:10px;
@@ -69,15 +89,27 @@ html, body {
 .block-emph {
   font-size: 56px;
   color: #fff;
-  display: table;
+  text-align: center;
   margin: 0 auto 10px;
   padding: 2px 5px;
   border-radius: 5px;
   font-family: 'Dynalight';
 }
+.container {
+  padding: 50px 15px;
+}
 
 
+
+#hire-me {
+  background-color: #313030;
+  color: #000;
+}
+
+#about-me {
+  background-color: #fff;
+}
 
 #my-timeline {
-	background-color: #fff;
+	background-color: #2d4dff;
 }

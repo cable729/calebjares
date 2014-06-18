@@ -3,14 +3,23 @@
   
   window.onload = function(){
     $('#title-box').transition({ opacity: 1, y: '220px' }, 500, 'ease'); 
-    $('.block-header').fitText(1.1);
+    $('.block-header').fitText(1.15);
     
     animateChevron();
+    setupFancyIcons();
     setupSmoothScroll();
     preloadImages();
   };
   window.onresize = function(){
     $('#intro-screen').height(window.innerHeight);
+  };
+  
+  function setupFancyIcons(){
+    $('.fancy-icon.spinner').hover(function(e){
+      $(this).transition({ borderRadius: '30px' }, 200, 'ease');
+    }, function(e){
+      $(this).transition({ borderRadius: '4px' }, 200, 'ease');
+    });
   };
 
   function animateChevron(){
