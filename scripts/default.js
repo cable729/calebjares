@@ -51,11 +51,12 @@
     var numLoaded = 0;
     var slideShowDiv = $('#slideshow');
     var imgDivs = slideShowDiv.find('.slideshow-image:not(:first)');
+    var allImgDivs = slideShowDiv.find('slideshow-image');
     imgDivs.hide().imageloader({
       background: true,
       callback: function(e){
         if (++numLoaded === imgDivs.length && numLoaded > 0){
-          startSlideshow(slideShowDiv.find('.slideshow-image'));
+          startSlideshow(allImgDivs);
         }
       }
     })
