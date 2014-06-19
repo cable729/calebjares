@@ -35,6 +35,14 @@
   <body>
     <div id="intro-screen" style="height:2000px">
       <div class="silk-screen" data-src="assets/layer.png"></div>
+<!--
+      <div id="rslides">
+        <li><img src="assets/lol-summonersriftwip-teaser.jpg" alt=""></li>
+        <li><img src="assets/Rift_1.1_Turret.jpg" alt=""></li>
+        <li><img src="assets/Rift_1.1_Shopkeeper.jpg" alt=""></li>
+        <li><img src="assets/Rift_1.1_Baron.jpg" alt=""></li>
+      </div>
+-->
       <div id="slideshow">
         <div class="slideshow-image" data-src="assets/lol-summonersriftwip-teaser.jpg"></div>
         <div class="slideshow-image" data-src="assets/Rift_1.1_Turret.jpg"></div>
@@ -53,18 +61,20 @@
       </a>
     </div>
     <script type="text/javascript">
-      $('#intro-screen').height(window.innerHeight);
-      $('.silk-screen').imageloader({ background: true });
-      $('.slideshow-image:first').hide().imageloader({
-        background: true,
-        callback: function(e){
-          $(e).fadeIn(1000);
-          $('.spinner').fadeOut(200);
-          $('#title-box').transition({ opacity: 1, y: '220px' }, 500, 'ease'); 
-          console.log(e);
-        }
+      $(function() {
+        $('#intro-screen').height(window.innerHeight);
+        $('.silk-screen').imageloader({ background: true });
+
+        $('.slideshow-image:first').hide().imageloader({
+          background: true,
+          callback: function(e){
+            $(e).fadeIn(1000);
+            $('.spinner').fadeOut(200);
+            $('#title-box').transition({ opacity: 1, y: '220px' }, 500, 'ease');
+          }
+        });
+        $('#title-box').animate({ opacity: 0 }, 0);
       });
-      $('#title-box').animate({ opacity: 0 }, 0);
     </script>
 
     <section id="hire-me">

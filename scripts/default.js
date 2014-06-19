@@ -55,12 +55,13 @@
   };
 
   function startSlideshow(){
-    var divs = $('.slideshow-image');
-    var pointer = 0;
-    setInterval(function(){
-      divs.eq(pointer).fadeOut(2000);
-      divs.eq((pointer + 1) % divs.length).fadeIn(2000);
-      pointer = (pointer + 1) % divs.length;
-    }, 8000);
+    $(function(){
+      setInterval(function(){
+        $('#slideshow :first-child')
+            .fadeOut(1500)
+            .next('div').fadeIn(1500)
+            .end().appendTo('#slideshow');
+      }, 7000);
+    });
   };
 })();
