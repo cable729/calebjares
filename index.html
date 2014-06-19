@@ -45,9 +45,10 @@
       <div class="background-color"></div>
       <div class="container"></div>
       <div id="title-box">
-          <h1>caleb jares</h1>
-          <p>Developer, Technologist, Enthusiast</p>
+        <h1>caleb jares</h1>
+        <p>Developer, Technologist, Enthusiast</p>
       </div>
+      <i class="fa fa-circle-o-notch spinner"></i>
       <a class="arrow" href="#hire-me">
         <i class="fa fa-chevron-down"></i>
       </a>
@@ -59,6 +60,7 @@
         background: true,
         callback: function(e){
           $(e).fadeIn(1000);
+          $('.spinner').fadeOut(200);
           console.log(e);
         }
       });
@@ -88,13 +90,13 @@
                 <p>I love to <b>build awesome things</b>. So do you. I think we'll get along.</p>
               </div>
               <div class="icon-row">
-                <div class="fancy-icon spinner">
+                <div class="fancy-icon spin">
                   <i class="fa fa-child"></i>
                 </div>
                 <p>I know that the <b class="secondary">player comes first</b>, so I always strive to deliver excellence.</p>
               </div>
               <div class="icon-row">
-                <div class="fancy-icon flipper">
+                <div class="fancy-icon flip">
                   <i class="fa fa-beer"></i>
                 </div>
                 <p>The Riot Manifesto agrees with me. I <b class="riot">work</b> hard. I <b class="riot">play</b> hard.</p>

@@ -129,3 +129,59 @@ html, body {
   background-color: #2d4dff;
   display: none;
 }
+
+
+@-webkit-keyframes rotation {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes rotation {
+  0% {
+    -moz-transform: rotate(0);
+  }
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-ms-keyframes rotation {
+  0% {
+    -ms-transform: rotate(0);
+  }
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+@-o-keyframes rotation {
+  0% {
+    -o-transform: rotate(0);
+  }
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  width: 45px;
+  position: absolute;
+  margin: 160px auto;
+  left: 0;
+  right: 0;
+  font-size: 45px;
+  -webkit-animation: rotation 2s infinite linear;
+     -moz-animation: rotation 2s infinite linear;
+      -ms-animation: rotation 2s infinite linear;
+       -o-animation: rotation 2s infinite linear;
+          animation: rotation 2s infinite linear;
+}
