@@ -1,7 +1,7 @@
 html, body {
-	min-height: 100%;
-	color: #fff;
-	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  min-height: 100%;
+  color: #fff;
+  font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
 #title-box h1 { font-size: 62px; font-family: 'Lato' }
@@ -10,35 +10,35 @@ html, body {
 #intro-screen h1 { font-weight: 100; }
 
 .slideshow-image {
-	display: block;
-	position: fixed;
-	width: 100%;
-	z-index: -100;
-	height: 100%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: top center;
+  display: block;
+  position: fixed;
+  width: 100%;
+  z-index: -100;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 .silk-screen {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: -50;
-	background-position: top left;
-	background-repeat: repeat;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -50;
+  background-position: top left;
+  background-repeat: repeat;
 }
 .title-box { text-align: center; color: #fff; }
 .arrow {
-	position: absolute;
-	left: 50%;
-	bottom: 20px;
-	width: 60px;
-	margin-left: -30px;
-	text-align: center;
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  width: 60px;
+  margin-left: -30px;
+  text-align: center;
 }
-.arrow i { font-size: 44px }
+.arrow i { font-size: 44px; color: #fff; }
 
 
 .fancy-icon {
@@ -53,9 +53,17 @@ html, body {
   margin-right: 20px;
 }
 
-.icon-row p, .icon-row span {
+.icon-row {
+  padding: 10px 0px;
   height: 100%;
   line-height: 60px;
+  display: table;
+  font-size: 16px;
+}
+.icon-row p {
+  vertical-align: middle;
+  line-height: normal;
+  display: table-cell;
 }
 .icon-row .fancy-icon {
   float: left;
@@ -63,7 +71,7 @@ html, body {
 
 
 .focus {
-  max-width: 560px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   padding: 10px 16px;
@@ -77,6 +85,13 @@ html, body {
 }
 .focus.dark b {
   color: #ff452d;
+/*  font-weight: normal;*/
+}
+.focus.dark b.secondary {
+  color: #2195de;
+}
+.focus.dark b.riot {
+  color: #ff1e1e;
 }
 .block-header {
   font-family: 'Audiowide';
@@ -106,10 +121,11 @@ html, body {
   color: #000;
 }
 
-#about-me {
-  background-color: #fff;
+#heres-why {
+  background-color: #cbc6c6;
 }
 
 #my-timeline {
-	background-color: #2d4dff;
+  background-color: #2d4dff;
+  display: none;
 }

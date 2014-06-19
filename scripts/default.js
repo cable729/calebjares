@@ -15,10 +15,20 @@
   };
   
   function setupFancyIcons(){
-    $('.fancy-icon.spinner').hover(function(e){
-      $(this).transition({ borderRadius: '30px' }, 200, 'ease');
+    $('.fancy-icon.square-to-circle').hover(function(e){
+      $(this).transition({ rotate: '0.25turn' }, 300, 'ease');
     }, function(e){
-      $(this).transition({ borderRadius: '4px' }, 200, 'ease');
+      $(this).transition({ rotate: '0turn' }, 300, 'ease');
+    });
+    $('.fancy-icon.spinner').hover(function(e){
+      $(this).transition({ borderRadius: '30px', rotate: '-0.5turn' }, 400, 'ease');
+    }, function(e){
+      $(this).transition({ borderRadius: '4px', rotate: '0turn' }, 400, 'ease');
+    });
+    $('.fancy-icon.flipper').hover(function(e){
+      $(this).transition({ rotateX: '-0.5turn' }, 400, 'ease');
+    }, function(e){
+      $(this).transition({ rotateX: '0turn' }, 400, 'ease');
     });
   };
 
@@ -37,17 +47,8 @@
   };
 
   function setupSmoothScroll(){
-    $('a[href*=#]:not([href=#])').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html,body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return false;
-        }
-      }
+    $('a').smoothScroll({
+      
     });
   };
 
