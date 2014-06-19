@@ -4,6 +4,10 @@ html, body {
   font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
+a { cursor: pointer; cursor: hand; }
+a.block-header { text-decoration: none; }
+a.block-header:hover { color: #cbcbcb; }
+
 #title-box h1 { font-size: 62px; font-family: 'Lato' }
 #title-box { text-align: center; }
 #intro-screen { height: 2000px; position: relative; }
@@ -85,7 +89,6 @@ html, body {
 }
 .focus.dark b {
   color: #ff452d;
-/*  font-weight: normal;*/
 }
 .focus.dark b.secondary {
   color: #2195de;
@@ -94,12 +97,14 @@ html, body {
   color: #ff1e1e;
 }
 .block-header {
+  display: block;
   font-family: 'Audiowide';
   text-align: center;
   margin: 0 20px 10px;
   background-color: #ff452d;
   color: #fff;
   border-radius:10px;
+  width: auto;
 }
 .block-emph {
   font-size: 56px;

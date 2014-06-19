@@ -43,7 +43,7 @@
   };
 
   function preloadImages(){
-    $('.slideshow-image').imageloader({ background: true, });
+    $('.slideshow-image').imageloader({ background: true });
   };
 
   function setupSmoothScroll(){
