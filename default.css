@@ -6,7 +6,6 @@ html, body {
 
 a { cursor: pointer; cursor: hand; }
 a.block-header { text-decoration: none; }
-a.block-header:hover { color: #cbcbcb; }
 
 #title-box h1 { font-size: 62px; font-family: 'Lato' }
 #title-box { text-align: center; }
@@ -106,6 +105,7 @@ a.block-header:hover { color: #cbcbcb; }
   border-radius:10px;
   width: auto;
 }
+a.block-header:hover { color: #fff; border-style: solid; border-width: 1px; border-color: #fff; margin-top: -1px; margin-bottom: 9px; }
 .block-emph {
   font-size: 56px;
   color: #fff;
@@ -126,13 +126,31 @@ a.block-header:hover { color: #cbcbcb; }
   color: #000;
 }
 
+#next-up {
+  position: relative;
+  background-image: url(assets/wooden-desk-keyboard.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+#next-up .overlay {
+  background: rgba(72, 72, 72, 0.9);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
 #heres-why {
   background-color: #cbc6c6;
 }
 
 #my-timeline {
-  background-color: #2d4dff;
-  display: none;
+  padding: 50px 0;
+  background: #003a5f;
+}
+
+#contact-me {
+  background-color: #fff;
 }
 
 
