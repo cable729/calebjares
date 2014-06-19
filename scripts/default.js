@@ -51,18 +51,18 @@
     var numLoaded = 0;
     var slideShowDiv = $('#slideshow');
     var imgDivs = slideShowDiv.find('.slideshow-image:not(:first)');
-    var allImgDivs = slideShowDiv.find('.slideshow-image');
     imgDivs.hide().imageloader({
       background: true,
       callback: function(e){
         if (++numLoaded === imgDivs.length && numLoaded > 0){
-          startSlideshow(allImgDivs);
+          $(startSlideshow());
         }
       }
     })
   };
 
-  function startSlideshow(divs){
+  function startSlideshow(){
+    var divs = $('.slideshow-image');
     var pointer = 0;
     setInterval(function(){
       divs.eq(pointer).fadeOut(2000);
