@@ -80,7 +80,7 @@
         
         $('.slideshow-image').hide();
         $('.slideshow-image:first').waitForImages({
-          waitForAll: false,
+          waitForAll: true,
           finished: loadComplete
         });
         console.log('went through setup');
