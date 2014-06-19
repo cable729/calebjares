@@ -51,7 +51,7 @@
     var numLoaded = 0;
     var slideShowDiv = $('#slideshow');
     var imgDivs = slideShowDiv.find('.slideshow-image:not(:first)');
-    var allImgDivs = slideShowDiv.find('slideshow-image');
+    var allImgDivs = slideShowDiv.find('.slideshow-image');
     imgDivs.hide().imageloader({
       background: true,
       callback: function(e){
