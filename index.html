@@ -56,10 +56,26 @@
         $('#intro-screen').height(window.innerHeight);
         $('#title-box').animate({ opacity: 0 }, 0);
         
+        function setupSlideshow(){
+          $('#slideshow').waitForImages({
+            waitForAll: true,
+            finished: function() {
+              setInterval(function(){
+                $('#slideshow :first-child')
+                    .fadeOut(1500)
+                    .next('div').fadeIn(1500)
+                    .end().appendTo('#slideshow');
+              }, 7000);
+            }
+          });
+        };
+        
         function loadComplete() {
+          console.log('load complete');
           $('.slideshow-image:first').fadeIn(1000);
           $('.spinner').fadeOut(200);
           $('#title-box').transition({ opacity: 1, y: '220px' }, 500, 'ease');
+          setupSlideshow();
         };
         
         $('.slideshow-image').hide();

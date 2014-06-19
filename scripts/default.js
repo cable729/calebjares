@@ -5,7 +5,6 @@
     animateChevron();
     setupFancyIcons();
     setupSmoothScroll();
-    setupSlideshow();
     
     $('.block-header').fitText(1.15, { minFontSize: '56px' });
   });
@@ -44,19 +43,5 @@
 
   function setupSmoothScroll(){
     $('a').smoothScroll();
-  };
-
-  function setupSlideshow(){
-    $('#slideshow').waitForImages({
-      waitForAll: true,
-      finished: function() {
-        setInterval(function(){
-          $('#slideshow :first-child')
-              .fadeOut(1500)
-              .next('div').fadeIn(1500)
-              .end().appendTo('#slideshow');
-        }, 7000);
-      }
-    });
   };
 })();
