@@ -55,7 +55,7 @@
       background: true,
       callback: function(e){
         if (++numLoaded === imgDivs.length && numLoaded > 0){
-          startSlideshow();
+          startSlideshow(slideShowDiv);
         }
       }
     })
