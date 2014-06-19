@@ -55,19 +55,18 @@
       background: true,
       callback: function(e){
         if (++numLoaded === imgDivs.length && numLoaded > 0){
-          startSlideshow(slideShowDiv);
+          startSlideshow(slideShowDiv.find('.slideshow-image'));
         }
       }
     })
   };
 
-  function startSlideshow(slideShowDiv){
-    var imgDivs = slideShowDiv.find('.slideshow-image');
+  function startSlideshow(divs){
     var pointer = 0;
     setInterval(function(){
-      imgDivs.eq(pointer).fadeOut(2000);
-      imgDivs.eq((pointer + 1) % imgDivs.length).fadeIn(2000);
-      pointer = (pointer + 1) % imgDivs.length;
+      divs.eq(pointer).fadeOut(2000);
+      divs.eq((pointer + 1) % divs.length).fadeIn(2000);
+      pointer = (pointer + 1) % divs.length;
     }, 8000);
   };
 })();
