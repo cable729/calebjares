@@ -33,12 +33,12 @@
   </head>
   <body>
     <div id="intro-screen" style="height:1920px">
-      <div class="silk-screen"></div>
+      <div class="silk-screen" data-src="assets/layer.png"></div>
       <div id="slideshow">
         <div class="slideshow-image" data-src="assets/lol-summonersriftwip-teaser.jpg"></div>
-        <div class="slideshow-image turret"></div>
-        <div class="slideshow-image shop-keeper"></div>
-        <div class="slideshow-image baron"></div>
+        <div class="slideshow-image" data-src="assets/Rift_1.1_Turret.jpg"></div>
+        <div class="slideshow-image" data-src="assets/Rift_1.1_Shopkeeper.jpg"></div>
+        <div class="slideshow-image" data-src="assets/Rift_1.1_Baron.jpg"></div>
       </div>
       <div class="background-color"></div>
       <div class="container"></div>
@@ -55,19 +55,20 @@
       $(function() {
         $('#intro-screen').height(window.innerHeight);
         $('#title-box').animate({ opacity: 0 }, 0);
+        $('.silk-screen').imageloader({ background: true });
         
         function setupSlideshow(){
           setInterval(function(){
             $('#slideshow :first-child')
               .fadeOut(1500)
-              .next('div').fadeIn(1500)
+              .next('div').show().fadeIn(1500)
               .end().appendTo('#slideshow');
           }, 7000);
         };
         
         function loadComplete() {
           console.log('load complete');
-          $('.slideshow-image:first').show().fadeIn(1000);
+          $('.slideshow-image:first').fadeIn(1000);
           $('.spinner').fadeOut(200);
           $('#title-box').transition({ opacity: 1, y: '220px' }, 500, 'ease');
           setupSlideshow();
@@ -79,6 +80,7 @@
           background: true,
           callback: loadComplete
         });
+        $('.slideshow-image:gt(0)').imageloader({ background: true });
         console.log('went through setup');
       });
     </script>
