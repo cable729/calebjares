@@ -5,13 +5,9 @@
     animateChevron();
     setupFancyIcons();
     setupSmoothScroll();
-    preloadImages();    
+    preloadImages();
+    $('.block-header').fitText(1.15);
   });
-  
-  window.onload = function(){
-    $('#title-box').transition({ opacity: 1, y: '220px' }, 500, 'ease'); 
-    $('.block-header').fitText(1.15);    
-  };
   
   window.onresize = function(){
     $('#intro-screen').height(window.innerHeight);
