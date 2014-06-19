@@ -18,7 +18,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.transit.min.js"></script>
-    <script type="text/javascript" src="scripts/jquery.waitforimages.js"></script>
+    <script type="text/javascript" src="scripts/jquery.imageloader.js"></script>
     
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Audiowide">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dynalight:400">
@@ -35,7 +35,7 @@
     <div id="intro-screen" style="height:1920px">
       <div class="silk-screen"></div>
       <div id="slideshow">
-        <div class="slideshow-image red-buff"></div>
+        <div class="slideshow-image" data-src="assets/lol-summonersriftwip-teaser.jpg"></div>
         <div class="slideshow-image turret"></div>
         <div class="slideshow-image shop-keeper"></div>
         <div class="slideshow-image baron"></div>
@@ -57,31 +57,27 @@
         $('#title-box').animate({ opacity: 0 }, 0);
         
         function setupSlideshow(){
-          $('#slideshow').waitForImages({
-            waitForAll: true,
-            finished: function() {
-              setInterval(function(){
-                $('#slideshow :first-child')
-                    .fadeOut(1500)
-                    .next('div').fadeIn(1500)
-                    .end().appendTo('#slideshow');
-              }, 7000);
-            }
-          });
+          setInterval(function(){
+            $('#slideshow :first-child')
+              .fadeOut(1500)
+              .next('div').fadeIn(1500)
+              .end().appendTo('#slideshow');
+          }, 7000);
         };
         
         function loadComplete() {
           console.log('load complete');
-          $('.slideshow-image:first').fadeIn(1000);
+          $('.slideshow-image:first').show().fadeIn(1000);
           $('.spinner').fadeOut(200);
           $('#title-box').transition({ opacity: 1, y: '220px' }, 500, 'ease');
           setupSlideshow();
+          console.log('starting slideshow');
         };
         
         $('.slideshow-image').hide();
-        $('.slideshow-image:first').waitForImages({
-          waitForAll: true,
-          finished: loadComplete
+        $('.slideshow-image:first').imageloader({
+          background: true,
+          callback: loadComplete
         });
         console.log('went through setup');
       });
