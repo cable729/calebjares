@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Caleb Jares</title>
     <link href="favicon.png" rel="shortcut icon" type="image/png">
+    
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300">
 
     <!-- Bootstrap -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
@@ -16,12 +18,8 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.transit.min.js"></script>
-    <script type="text/javascript" src="scripts/jquery.imageloader.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lato:300">
-<!--    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lora:700">-->
-<!--    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Milonga:400">-->
-<!--    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Sevillana:400">-->
-<!--    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Poiret+One:400">-->
+    <script type="text/javascript" src="scripts/jquery.waitforimages.js"></script>
+    
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Audiowide">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dynalight:400">
     <link href='http://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css'>
@@ -34,21 +32,13 @@
     <![ENDIF]-->
   </head>
   <body>
-    <div id="intro-screen" style="height:2000px">
-      <div class="silk-screen" data-src="assets/layer.png"></div>
-<!--
-      <div id="rslides">
-        <li><img src="assets/lol-summonersriftwip-teaser.jpg" alt=""></li>
-        <li><img src="assets/Rift_1.1_Turret.jpg" alt=""></li>
-        <li><img src="assets/Rift_1.1_Shopkeeper.jpg" alt=""></li>
-        <li><img src="assets/Rift_1.1_Baron.jpg" alt=""></li>
-      </div>
--->
+    <div id="intro-screen" style="height:1920px">
+      <div class="silk-screen"></div>
       <div id="slideshow">
-        <div class="slideshow-image" data-src="assets/lol-summonersriftwip-teaser.jpg"></div>
-        <div class="slideshow-image" data-src="assets/Rift_1.1_Turret.jpg"></div>
-        <div class="slideshow-image" data-src="assets/Rift_1.1_Shopkeeper.jpg"></div>
-        <div class="slideshow-image" data-src="assets/Rift_1.1_Baron.jpg"></div>
+        <div class="slideshow-image red-buff"></div>
+        <div class="slideshow-image turret"></div>
+        <div class="slideshow-image shop-keeper"></div>
+        <div class="slideshow-image baron"></div>
       </div>
       <div class="background-color"></div>
       <div class="container"></div>
@@ -64,17 +54,19 @@
     <script type="text/javascript">
       $(function() {
         $('#intro-screen').height(window.innerHeight);
-        $('.silk-screen').imageloader({ background: true });
-
-        $('.slideshow-image:first').hide().imageloader({
-          background: true,
-          callback: function(e){
-            $(e).fadeIn(1000);
-            $('.spinner').fadeOut(200);
-            $('#title-box').transition({ opacity: 1, y: '220px' }, 500, 'ease');
-          }
-        });
         $('#title-box').animate({ opacity: 0 }, 0);
+        
+        function loadComplete() {
+          $('.slideshow-image:first').fadeIn(1000);
+          $('.spinner').fadeOut(200);
+          $('#title-box').transition({ opacity: 1, y: '220px' }, 500, 'ease');
+        };
+        
+        $('.slideshow-image').hide();
+        $('.slideshow-image:first').waitForImages({
+          waitForAll: false,
+          finished: loadComplete
+        });
       });
     </script>
 
