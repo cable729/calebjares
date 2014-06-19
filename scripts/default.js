@@ -6,7 +6,7 @@
     setupFancyIcons();
     setupSmoothScroll();
     preloadImages();
-    $('.block-header').fitText(1.15);
+    $('.block-header').fitText(1.15, { minFontSize: '56px' });
   });
   
   window.onload = function() {
