@@ -197,8 +197,11 @@ a.block-header:hover { color: #fff; border-style: solid; border-width: 1px; bord
 
 .spinner {
   width: 45px;
+  height: 45px;
   position: absolute;
-  margin: 160px auto;
+  margin: auto;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
   font-size: 45px;
