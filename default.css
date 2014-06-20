@@ -7,7 +7,7 @@ html, body {
 a { cursor: pointer; cursor: hand; }
 a.block-header { text-decoration: none; }
 
-#title-box h1 { font-size: 62px; font-family: 'Lato' }
+#title-box h1 { font-size: 62px; font-family: 'Lato', "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif; }
 #title-box { text-align: center; }
 #intro-screen { height: 2000px; position: relative; }
 #intro-screen h1 { font-weight: 100; }
@@ -121,6 +121,31 @@ a.block-header:hover { color: #fff; border-style: solid; border-width: 1px; bord
 }
 .container {
   padding: 50px 15px;
+}
+
+/* Skills Section */
+#skills {
+  background: #8cbce8;
+}
+.skill {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: 0 auto 0;
+}
+.skill span {
+  line-height: normal;
+  font-family: 'Lato', "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+  width: 60%;
+  text-align: center;
+  font-size: 36px;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
 }
 
 /* Timeline Section */
