@@ -10,10 +10,11 @@
   /*thanks to
      https://twitter.com/JacoKoster
   */
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMwWMjwEwADoQHL6xkJXwAAAABJRU5ErkJggg==");
+  /*  http://px64.net/*/
+  background: url("data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP4/x8AAwAB/2+Bq7YAAAAASUVORK5CYII=");
   background-repeat: repeat-y;
   background-position: 50% 0;
-  background-size: 5px 100%;
+  background-size: 4px 100%;
   /*
     border-box ftw, inside .timeline now to prevent
     screwing up your CSS rule if you are not using
@@ -104,14 +105,6 @@
   margin-top: 10px;
   max-width: 100%;
 }
-/* line 106, ../scss/timeline.scss */
-.timeline .event:hover, .timeline.v1 .event:hover {
-  background: #f6f6f6;
-}
-/* line 109, ../scss/timeline.scss */
-.timeline .event:hover:after, .timeline.v1 .event:hover:after {
-  background: #505050;
-}
 /* line 114, ../scss/timeline.scss */
 .timeline .event:nth-of-type(2n), .timeline.v1 .event:nth-of-type(2n) {
   float: left;
@@ -125,6 +118,7 @@
 }
 @media all and (min-width: 650px) {
   /* line 124, ../scss/timeline.scss */
+/*
   .timeline .event:after, .timeline.v1 .event:after {
     display: block;
     content: ' ';
@@ -138,6 +132,7 @@
     border: 2px solid white;
   }
 }
+*/
 /* line 139, ../scss/timeline.scss */
 .timeline time, .timeline.v1 time {
   display: block;

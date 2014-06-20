@@ -12,7 +12,6 @@
     <!-- Bootstrap -->
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="timeline.css" rel="stylesheet">
     <link href="default.css" rel="stylesheet">
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -81,6 +80,7 @@
           callback: loadComplete
         });
         $('.slideshow-image:gt(0)').imageloader({ background: true });
+        $('#next-up').imageloader({ background: true });
         console.log('went through setup');
       });
     </script>
@@ -126,7 +126,7 @@
     </section>
 
     <a href="#my-timeline">
-      <section id="next-up">
+      <section id="next-up" data-src="assets/wooden-keyboard-closeup.jpg">
         <div class="overlay"></div>
         <div class="container">
           <div class="row">
@@ -184,24 +184,29 @@
     </section>
     
     <section id="my-timeline">
-      <div>
-        <ul class="timeline">
-          <li class="year first">2013</li>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="year">2011</div>
 
-          <li class="event">
-            Something amazing happened today, but it's a secret.
-          </li>
-          <li class="event" href="#">
-            Timeline.css is <b>dynamic</b>, <b>responsive</b> and optimized to <b>demonstrate events</b> in your life in a <b>simple and clear</b> way
-          </li>
+            <div class="event">
+              Became a Husker at University of Nebraska-Lincoln
+            </div>
 
 
-          <li class="year">2012</li>
+<!--            <div class="year">2012</div>-->
 
-          <li class="event">
-               Whether that be a mobile app to help summoners keep up with their fantasy <b class="secondary">League of Legends</b> teams, strengthened infastructure to keep gamers online more often, or an update to <b>Summoner's Rift</b> that evens the playing field,
-          </li>
-        </ul>
+            <div class="event" href="#">
+              
+            </div>
+
+<!--
+            <div class="event">
+                 Whether that be a mobile app to help summoners keep up with their fantasy <b class="secondary">League of Legends</b> teams, strengthened infastructure to keep gamers online more often, or an update to <b>Summoner's Rift</b> that evens the playing field,
+            </div>
+-->
+          </div>
+        </div>
       </div>
     </section>
     
