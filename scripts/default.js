@@ -6,6 +6,7 @@
     setupFancyIcons();
     setupSmoothScroll();
     setupKnobs();
+    setupKnobAnimations();
     
     $('.block-header').fitText(1.15, { minFontSize: '56px' });
   });
@@ -13,6 +14,17 @@
   window.onresize = function(){
     $('#intro-screen').height(window.innerHeight);
   };
+  
+  function setupKnobAnimations() {
+    $('.skill').hover(
+      function over() {
+        $(this).find('canvas').transition({ rotate: '1turn' }, 800);
+      },
+      function out() {
+        $(this).find('canvas').transition({ rotate: '0turn' }, 500);
+      }
+    );
+  }
   
   function setupKnobs() {
     $('.dial').knob({
