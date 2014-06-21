@@ -57,12 +57,12 @@
         $('.silk-screen').imageloader({ background: true });
         
         function setupSlideshow(){
-          setInterval(function(){
+          $(setInterval(function(){
             $('#slideshow :first-child')
               .fadeOut(1500)
               .next('div').show().fadeIn(1500)
               .end().appendTo('#slideshow');
-          }, 7000);
+          }, 7000));
         };
         
         function loadComplete() {
