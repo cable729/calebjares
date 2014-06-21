@@ -34,10 +34,10 @@
     <div id="intro-screen" style="height:1920px">
       <div class="silk-screen" data-src="assets/layer.png"></div>
       <div id="slideshow">
-        <div class="slideshow-image" data-src="assets/lol-summonersriftwip-teaser.jpg"></div>
-        <div class="slideshow-image" data-src="assets/Rift_1.1_Turret.jpg"></div>
-        <div class="slideshow-image" data-src="assets/Rift_1.1_Shopkeeper.jpg"></div>
-        <div class="slideshow-image" data-src="assets/Rift_1.1_Baron.jpg"></div>
+        <img class="slideshow-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/lol-summonersriftwip-teaser.jpg"><img>
+        <img class="slideshow-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/Rift_1.1_Turret.jpg"><img>
+        <img class="slideshow-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/Rift_1.1_Shopkeeper.jpg"><img>
+        <img class="slideshow-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/Rift_1.1_Baron.jpg"><img>
       </div>
       <div class="background-color"></div>
       <div class="container"></div>
@@ -82,10 +82,9 @@
         
         $('.slideshow-image').hide();
         $('.slideshow-image:first').imageloader({
-          background: true,
           callback: loadComplete
         });
-        $('.slideshow-image:gt(0)').imageloader({ background: true });
+        $('.slideshow-image:gt(0)').imageloader();
         $('#next-up').imageloader({ background: true });
         console.log('went through setup');
       });

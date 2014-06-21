@@ -13,7 +13,8 @@ a.block-header { text-decoration: none; }
 #intro-screen h1 { font-weight: 100; }
 
 .slideshow-image {
-  display: block;
+  padding-top: 0;
+  margin-top: 0;
   position: fixed;
   width: 100%;
   z-index: -100;
@@ -22,10 +23,6 @@ a.block-header { text-decoration: none; }
   background-repeat: no-repeat;
   background-position: top center;
 }
-.red-buff { background-image: url(assets/lol-summonersriftwip-teaser.jpg); }
-.turret { background-image: url(assets/Rift_1.1_Turret.jpg); }
-.shop-keeper { background-image: url(assets/Rift_1.1_Shopkeeper.jpg); }
-.baron { background-image: url(assets/Rift_1.1_Baron.jpg); }
 .silk-screen {
   position: absolute;
   top: 0px;
