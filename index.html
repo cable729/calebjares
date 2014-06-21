@@ -57,18 +57,18 @@
         $('.silk-screen').imageloader({ background: true });
         
         function setupSlideshow(){
-          var index = 0;
-          var $slides = $('#slideshow');
+          var currentIndex = 0;
+          var $slides = $('.slideshow-image');
           
           nextIndex = function() {
-            return (index + 1) % $slides.length;
+            return (currentIndex + 1) % $slides.length;
           }
           
           setInterval(function(){
-            $slides.eq(index).fadeOut(1500);
+            $slides.eq(currentIndex).fadeOut(1500);
             $slides.eq(nextIndex()).fadeIn(1500);
-            index = nextIndex;
-          }, 7000);
+            currentIndex = nextIndex();
+          }, 4000);
         };
         
         function loadComplete() {
@@ -76,7 +76,7 @@
           $('.slideshow-image:first').fadeIn(1000);
           $('.spinner').fadeOut(200);
           $('#title-box').transition({ opacity: 1, y: '220px' }, 500, 'ease');
-          $(setupSlideshow());
+          setupSlideshow();
           console.log('starting slideshow');
         };
         
