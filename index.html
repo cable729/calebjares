@@ -18,6 +18,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.transit.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.imageloader.js"></script>
+    <script type="text/javascript" src="scripts/imagesloaded.pkgd.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Audiowide">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Dynalight:400">
@@ -32,15 +33,14 @@
   </head>
   <body>
     <div id="intro-screen" style="height:1920px">
-      <div class="silk-screen" data-src="assets/layer.png"></div>
+      <img class="silk-screen">
       <div id="slideshow">
-        <img class="slideshow-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/lol-summonersriftwip-teaser.jpg"><img>
-        <img class="slideshow-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/Rift_1.1_Turret.jpg"><img>
-        <img class="slideshow-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/Rift_1.1_Shopkeeper.jpg"><img>
-        <img class="slideshow-image" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="assets/Rift_1.1_Baron.jpg"><img>
+        <img class="slideshow-image red-buff">
+        <img class="slideshow-image turret">
+        <img class="slideshow-image shopkeeper">
+        <img class="slideshow-image baron">
       </div>
       <div class="background-color"></div>
-      <div class="container"></div>
       <div id="title-box">
         <h1>caleb jares</h1>
         <p>Developer, Technologist, Enthusiast</p>
@@ -53,8 +53,7 @@
     <script type="text/javascript">
       $(function() {
         $('#intro-screen').height(window.innerHeight);
-        $('#title-box').animate({ opacity: 0 }, 0);
-        $('.silk-screen').imageloader({ background: true });
+        $('#title-box').animate({ opacity: 0, y: '-400px' }, 0);
         
         function setupSlideshow(){
           var currentIndex = 0;
@@ -68,25 +67,17 @@
             $slides.eq(currentIndex).fadeOut(1500);
             $slides.eq(nextIndex()).fadeIn(1500);
             currentIndex = nextIndex();
-          }, 4000);
+          }, 7000);
         };
         
         function loadComplete() {
-          console.log('load complete');
           $('.slideshow-image:first').fadeIn(1000);
           $('.spinner').fadeOut(200);
-          $('#title-box').transition({ opacity: 1, y: '220px' }, 500, 'ease');
+          $('#title-box').transition({ opacity: 1, y: '0' }, 800, 'ease');
           setupSlideshow();
-          console.log('starting slideshow');
         };
         
-        $('.slideshow-image').hide();
-        $('.slideshow-image:first').imageloader({
-          callback: loadComplete
-        });
-        $('.slideshow-image:gt(0)').imageloader();
-        $('#next-up').imageloader({ background: true });
-        console.log('went through setup');
+        imagesLoaded('#slideshow', loadComplete);
       });
     </script>
 
@@ -131,7 +122,7 @@
     </section>
 
     <a href="#my-timeline">
-      <section id="next-up" data-src="assets/wooden-keyboard-closeup.jpg">
+      <section id="next-up">
         <div class="overlay"></div>
         <div class="container">
           <div class="row">
