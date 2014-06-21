@@ -208,9 +208,15 @@ span.pun {
   font-size: 50px;
   margin: 20px auto;
   text-align: center;
-  font-family: 'Lato';
+  font-family: 'Oswald';
   color: #dc291e;
 }
+/* Glyph, by Harry Roberts */
+		
+.year:before {
+  
+}
+
 .event {
   position: relative;
   padding: 20px 20px;
@@ -221,6 +227,7 @@ span.pun {
 .event .company, .event .headline {
   display: block;
   font-size: 28px;
+  color: #ff452d;
 }
 .event .timestamp {
   display: block;
