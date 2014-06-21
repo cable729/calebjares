@@ -7,13 +7,23 @@
     setupSmoothScroll();
     setupKnobs();
     setupKnobAnimations();
+    doResize();
     
     $('.block-header').fitText(1.15, { minFontSize: '56px' });
   });
   
-  window.onresize = function(){
+  window.onresize = doResize;
+  
+  function doResize() {
     $('#intro-screen').height(window.innerHeight);
-  };
+    
+    if (window.innerWidth < 1000) {
+      // works for now
+      $('#heres-why .row').css('marginTop', 0);
+    } else {
+      $('#heres-why .row').css('marginTop', window.innerWidth / 10);
+    }
+  }
   
   function setupKnobAnimations() {
     $('.skill').hover(
@@ -31,6 +41,7 @@
       readOnly: true,
       width: '200',
       displayInput: false,
+      fgColor: '#333',
       thickness: '0.15',
       draw : function () {
           var a = this.angle(this.cv)  // Angle
@@ -58,7 +69,7 @@
           }
 
           this.g.beginPath();
-          this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
+          this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ; // ff452d
           this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
           this.g.stroke();
 
