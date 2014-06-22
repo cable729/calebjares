@@ -7,6 +7,8 @@
     setupSmoothScroll();
     setupKnobs();
     setupKnobAnimations();
+    setupWorksSlideshow();
+    setupNavBar();
     doResize();
     
     $('.block-header').fitText(1.15, { minFontSize: '56px' });
@@ -23,6 +25,26 @@
     } else {
       $('#heres-why .row').css('marginTop', window.innerWidth / 10);
     }
+  }
+  
+  function setupNavBar() {
+    $('.navbar a').hover(
+      function over() {
+        $(this).stop().transition({ rotateX: '0.1turn' }, 200);
+      },
+      function out() {
+        $(this).stop().transition({ rotateX: '0' }, 200);        
+      }
+    );
+  }
+  
+  function setupWorksSlideshow() {
+    $('.slideshow').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000
+    });
   }
   
   function setupKnobAnimations() {
