@@ -268,8 +268,13 @@ span.pun {
 #contact-me .container {
   padding-top: 20px;
 }
-.photo {
+.photo img {
+  height: 294px;
   overflow: hidden;
+  border-style: solid;
+  border-color: #ccc;
+  border-width: 1px;
+  color: #333;
 }
 .contact {
   margin: 0;
