@@ -46,7 +46,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="#intro-screen">Top</a></li>
-            <li><a href="#hire-me">Intro</a></li>
+<!--            <li><a href="#hire-me">Intro</a></li>-->
             <li><a href="#skills">Skills</a></li>
             <li><a href="#my-timeline">Experience</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
@@ -78,15 +78,6 @@
         $('#intro-screen').height(window.innerHeight);
         $('#title-box').animate({ opacity: 0, y: '-400px' }, 0);
         
-        function adjustNavBar() {
-//          var percent = $(window).scrollTop() / $(window).innerHeight();
-//          percent = percent > 1 ? 1 : percent;
-//          $('.navbar a').css('backgroundColor', 'rgba(51,51,51,'+percent+')');
-        };
-        
-        $(window).scroll(adjustNavBar);
-        adjustNavBar();
-        
         function setupSlideshow(){
           var currentIndex = 0;
           var $slides = $('.slideshow-image');
@@ -117,7 +108,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
-            <a href="#contact-me" class="block-header">You should hire me</a>
+            <a href="#contact-me" class="block-header hire-href">You should hire me</a>
             <h2 class="block-emph">And here's why</h2>
           </div>
         </div>
@@ -209,7 +200,7 @@
               <span class="headline">University of Nebraska-Lincoln</span>
               <span class="location">Lincoln, NE</span>
               <span class="timestamp">August 2011</span>
-              Became a Husker at University of Nebraska-Lincoln, originally studying Computer Engineering.
+              Became a Husker at University of Nebraska-Lincoln and started studying Computer Engineering. This would later change.
             </div>
 
             <div class="year">2012</div>
@@ -223,7 +214,7 @@
                 <li>Reduced employee time spent on a full server deploy by 4 hours.</li>
               </ul>
               <ul class="technologies">
-                <li>Windows Server 2008</li><li>MSSQL</li><li>PowerShell</li><li>Process Monitor</li><li>Process Explorer</li>
+                <li>Windows Server 2008</li><li class="sql">MSSQL</li><li>PowerShell</li><li>Process Monitor</li><li>Process Explorer</li>
               </ul>
             </div>
             
@@ -231,12 +222,12 @@
               <span class="company">Locabal</span>
               <span class="location">Lincoln, NE</span>
               <span class="timestamp">August 2012 - May 2013</span>
-              <p>Spent the school year working at Locabal as a full stack Web Developer. I was one of seven members of a Design Studio team that created and launched Locabal's website. Design studio is a workshop class normally reserved for junior and senior member of the Raikes school. While not a member of the Raikes school, I was invited to participate my sophomore year based on my academic performance and recommendation from my advisor.</p>
+              <p>Spent the school year working at Locabal as a full stack Web Developer. Was one of seven members on the Design Studio team that created and launched Locabal's website. The Design Studio class is a yearlong workshop normally reserved for junior and senior member of the Raikes school. While students not in the Raikes School do not usually participate, I was invited based on previous academic performance and advisor recommendation.</p>
               <ul class="achievements">
-                <li>Led the back-end architecture design on the web server.</li>
+                <li>Led the back-end architecture design.</li>
               </ul>
               <ul class="technologies">
-                <li>C#</li><li>ASP.NET MVC</li><li>Entity Framework</li><li>JavaScript</li><li>TFS</li>
+                <li class="csharp">C#</li><li class="csharp">ASP.NET MVC</li><li class="csharp">Entity Framework</li><li class="javascript">JavaScript</li><li>TFS</li>
               </ul>
             </div>
             
@@ -246,15 +237,15 @@
               <span class="company">Travefy</span>
               <span class="location">Lincoln, NE</span>
               <span class="timestamp">May 2013 - August 2013</span>
-              <p>Spent the summer at a startup company, Travefy, as Development and Systems Engineering Intern. Was one of only two software developers who pushed <a href="http://travefy.com">travefy.com</a> out of beta.</p>
+              <p>Spent the summer at Travefy as a Development and Systems Engineering Intern. Worked with a small team of developers to push <a href="http://travefy.com">travefy.com</a> out of beta.</p>
               <ul class="achievements">
                 <li>Designed and implemented a second server to handle emails. Was able to reduce page load times by up to 1000ms.</li>
                 <li>Created and maintained an automated build server which saved 10 minutes per deploy.</li>
                 <li>Optimized auto-complete search bar and reduced response times for auto-complete by 50%.</li>
-                <li>Added regression test framework that was run on every build.</li>
+                <li>Added a regression test suite that was run on every build.</li>
               </ul>
               <ul class="technologies">
-                <li>C#</li><li>ASP.NET MVC</li><li>MSSQL</li><li>TeamCity</li><li>CasperJS</li><li>HTML</li><li>CSS</li><li>JavaScript</li><li>DevOps</li><li>EmberJS</li><li>Git</li>
+                <li class="csharp">C#</li><li class="csharp">ASP.NET MVC</li><li class="sql">MSSQL</li><li>TeamCity</li><li class="javascript">CasperJS</li><li class="htmlcss">HTML</li><li class="htmlcss">CSS</li><li class="javascript">JavaScript</li><li>DevOps</li><li class="javascript">EmberJS</li><li>Git</li>
               </ul>
             </div>
             
@@ -264,13 +255,13 @@
               <span class="company">Powderhook</span>
               <span class="location">Lincoln, NE</span>
               <span class="timestamp">January - May</span>
-              <p>Spent the spring semester working at <a href="http://powderhook.com">Powderhook</a> as a Mobile Development Intern. Was the sole developer on the mobile team and was in charge of researching, designing, and creating an Android companion application for the site by the end of the school year. Helped develop a public API that the site and app could use.</p>
+              <p>Spent the spring semester working at <a href="http://powderhook.com">Powderhook</a> as a Mobile Development Intern. Was the sole developer on the mobile team. Responsibilities included researching, designing, and creating an Android companion application for the site. Additionally helped develop a public API in Ruby on Rails that the site and app could use.</p>
               <ul class="achievements">
-                <li>Integrated Facebook, Google, and Twitter login into the app, avoiding web frames where possible.</li>
+                <li>Integrated Facebook, Google, and Twitter login into the app, using installed apps when possible.</li>
                 <li>Added customized Google Maps panels to the app. Optimized pre-fetching of markers and clustering.</li>
               </ul>
               <ul class="technologies">
-                <li>Android</li><li>Java</li><li>Git</li><li>Ruby</li><li>Ruby on Rails</li><li>Facebook for Android SDK</li><li>Google+ for Android SDK</li><li>Twitter</li><li>OAuth</li><li>Google Maps for Android API</li>
+                <li class="mobile java">Android</li><li class="java">Java</li><li>Ruby</li><li>Ruby on Rails</li><li>Facebook for Android SDK</li><li>Google+ for Android SDK</li><li>Twitter</li><li>OAuth</li><li>Google Maps for Android API</li><li>Git</li>
               </ul>
             </div>
             
@@ -278,12 +269,12 @@
               <span class="company">Microsoft</span>
               <span class="location">Fargo, ND</span>
               <span class="timestamp">May - August</span>
-              <p>Spent the summer working at Microsoft as a Software Development Intern. Worked with two other interns to develop a Windows Store application that embedded three products into one application. Will soon start working with a greater team of engineers implementing backend code for APIs. Worked during lunch with a motivated team on a cross-platform application that will be used in November during a conference hosted by Microsoft.</p>
+              <p>Spent the summer working at Microsoft as a Software Development Intern. Worked with a small team of interns imbedding three existing products into one Windows Store application. Will soon start working with a greater team of engineers implementing backend code for APIs. Worked during lunch with a motivated team on a cross-platform mobile application that will be used in November during a conference hosted by Microsoft.</p>
               <ul class="achievements">
                 <li>Captured and replicated HTTP traffic into a JavaScript module used for authentication.</li>
               </ul>
               <ul class="technologies">
-                <li>Windows Store Apps</li><li>WinJS</li><li>JavaScript</li><li>HTML</li><li>CSS</li><li>Cordova</li><li>TFS</li><li>C#</li><li>HTTP</li><li>Authentication</li><li>IFrame</li><li>WebView</li><li>Fiddler</li>
+                <li>Windows Store Apps</li><li class="javascript">WinJS</li><li class="javascript">JavaScript</li><li class="htmlcss">HTML</li><li class="htmlcss">CSS</li><li class="mobile javascript htmlcss">Cordova</li><li>TFS</li><li class="csharp">C#</li><li>HTTP</li><li>Authentication</li><li>IFrame</li><li>WebView</li><li>Fiddler</li>
               </ul>
             </div>
             
@@ -300,8 +291,8 @@
               <span class="company">Riot Games</span>
               <span class="location">Santa Monica, CA</span>
               <span class="timestamp">June 2015</span>
-<!--              <p>Make it happen!</p>-->
-              <p>Started work at Riot Games. Maybe I'll help develop a mobile app to help summoners keep up with their Fantasy LCS teams, or strengthen the server architecture to keep gamers online 100% of the time. I may even get a chance to work on the game engine, or design Runetera's next Champion! Whatever I end up doing, I know I'll be living the dream working on the game I love.</p>
+<!--              <p>The future is an unwritten book.</p>-->
+              <p>Started work at Riot Games. Maybe I'll help develop a mobile app to help summoners keep up with their Fantasy LCS teams, or strengthen the server architecture to keep gamers online 100% of the time. I may even get a chance to work on the game engine, or design Runetera's next Champion! Whatever I end up doing, I know I'll be living the dream working for something I truly care about.</p>
             </div>
           </div>
         </div>
@@ -318,20 +309,20 @@
               <h1>Powderhook Android Application</h1>
               <img src="assets/powderhook-tri.png">
               
-              <p>This was the first Android application I developed. The Powderhook app lets the user browse the Powderhook listings map, update their info, and upload pictures to their profile. It offers sign-in through native Facebook, but falls back to a WebView when the user does not have the Facebook app installed. It also offers sign-in through native Google+, Twitter through WebView, and regular email and password sign-in.</p>
+              <p>This was the first Android application I developed. The Powderhook app lets users browse the Powderhook listings map, update their info, and upload pictures to their profile. It offers sign-in through native Facebook, but falls back to a WebView when the user does not have the Facebook app installed. It also offers sign-in through native Google+, Twitter through WebView, and regular email and password sign-in.</p>
 
-              <p>The app interacts with the user's gallery and photos through intents, and automatically rotates images correctly when the user takes a landscape image. The map makes use of an optimized rendering system, which has to manage when to fetch new markers, how many to add, and how many to keep on the map in order to keep the app running smoothly.</p>
+              <p>The app interacts with the user's gallery and photos through intents, and automatically rotates images correctly when the user snaps a landscape photo. The map makes use of an optimized rendering system, which has to manage fetching and merging hundreds of markers without slowing the app down.</p>
             </div>
             <div class="item">
               <h1>Swiper Android Application</h1>
               <img src="assets/swiper.jpg">
-              <p>This app came about beause I was inspired by the Tinder app design and wanted to replicate it. I was able to create a smooth and pleasing interface. The user can swipe cards left and right, and the "Yeah!" or "Nope!" labels fade in as they move to the side. When the user drags far enough, the card will slide off screen and the next card will pop up.</p>
+              <p>A few months ago I was inspired by the Tinder app design and decided to replicate it. I was able to create a smooth and pleasing interface that was simple in the code-behind. The app allows users to swipe cards left and right. As they swipe the phrases "Yeah!" or "Nope!" fade in and out on the sides of the card. When the user drags a card close enough to the edge of the screen, the card will shoot off screen and the next card will pop up.</p>
               <p>You can view the <a href="http://github.com/cable729/swiper">source code here</a>.</p>
             </div>
             <div class="item">
               <h1>This Website</h1>
               <img src="assets/this-website.png">
-              <p>I have little experience with graphic design, so this site was a huge learning opportunity for me. I learned some color schemes dos and don'ts and gained a much greater understanding of CSS.</p>
+              <p>I have little experience with graphic design, so this site was a huge learning opportunity for me. I learned some color schemes dos and don'ts and gained a much greater understanding of CSS. I used Twitter Bootstrap 3 and lots of jQuery plugins.</p>
               <p>You can view the <a href="http://github.com/cable729/calebjares">source code here</a>.</p>
             </div>
           </div>
@@ -355,8 +346,8 @@
             <img src="assets/caleb.jpg">
           </div>
           <div class="col-sm-8 contact">
-            <a href="mailto:cable729@gmail.com"><i class="fa fa-envelope"></i>Email me at cable729@gmail.com</a>
-            <a href="tel:9705903046"><i class="fa fa-phone"></i>Call me at (970)-590-3046</a>
+            <a class="hire" href="mailto:cable729@gmail.com"><i class="fa fa-envelope"></i>Email me at cable729@gmail.com</a>
+            <a class="hire" href="tel:9705903046"><i class="fa fa-phone"></i>Call me at (970)-590-3046</a>
             <a href="http://lnkd.in/M3NG8S"><i class="fa fa-linkedin"></i>Connect with me on LinkedIn</a>
             <a href="http://twitter.com/cable729"><i class="fa fa-twitter"></i>Follow me on Twitter at @cable729</a>
             <a href="http://github.com/cable729/calebjares"><i class="fa fa-github"></i>Fork me on GitHub</a>
@@ -367,7 +358,6 @@
       </div>
     </section>
 
-    <script type="text/javascript" src="scripts/slick.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.knob.js"></script>
     <script type="text/javascript" src="scripts/jquery.fittext.js"></script>
     <script type="text/javascript" src="scripts/jquery.smooth-scroll.min.js"></script>
