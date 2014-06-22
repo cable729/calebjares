@@ -32,19 +32,29 @@
       <SCRIPT SRC="HTTPS://OSS.MAXCDN.COM/LIBS/RESPOND.JS/1.4.2/RESPOND.MIN.JS"></SCRIPT>
     <![ENDIF]-->
   </head>
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="center">
-          <a href="#intro-screen">Top</a>
-          <a href="#hire-me">Intro</a>
-          <a href="#skills">Skills</a>
-          <a href="#my-timeline">Experience</a>
-          <a href="#portfolio">Portfolio</a>
-          <a href="#contact-me">Contact</a>
+  <body data-spy="scroll" data-target="#navbar" data-offset="70">
+    <div id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
         </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#intro-screen">Top</a></li>
+            <li><a href="#hire-me">Intro</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#my-timeline">Experience</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact-me">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
-    </nav>
+    </div>
     <div id="intro-screen" style="height:1920px">
       <img class="silk-screen">
       <div id="slideshow">
@@ -69,9 +79,9 @@
         $('#title-box').animate({ opacity: 0, y: '-400px' }, 0);
         
         function adjustNavBar() {
-          var percent = $(window).scrollTop() / $(window).innerHeight();
-          percent = percent > 1 ? 1 : percent;
-          $('.navbar a').css('backgroundColor', 'rgba(51,51,51,'+percent+')');
+//          var percent = $(window).scrollTop() / $(window).innerHeight();
+//          percent = percent > 1 ? 1 : percent;
+//          $('.navbar a').css('backgroundColor', 'rgba(51,51,51,'+percent+')');
         };
         
         $(window).scroll(adjustNavBar);
@@ -123,7 +133,7 @@
                 <div class="fancy-icon square-to-circle">
                   <i class="fa fa-building"></i>
                 </div>
-                <p>I love to <b>build awesome things</b>. So do you. I think we'll get along.</p>
+                <p>I love to <b><a href="#portfolio">build awesome things</a></b>. So do you. I think we'll get along.</p>
               </li>
               <li class="icon-row">
                 <div class="fancy-icon spin">
@@ -142,21 +152,6 @@
         </div>
       </div>
     </section>
-
-<!--
-    <a href="#my-timeline">
-      <section id="next-up">
-        <div class="overlay"></div>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-12">
-              <h2 class="block-emph">Still unsure? Check out my experience!</h2>
-            </div>
-          </div>
-        </div>
-      </section>
-    </a>
--->
     
     <section id="skills">
       <a id="skills-container" class="dark-segue" href="#skills-container"><h1>I have a high <span class="pun">degree</span> of experience in these technologies</h1></a>
@@ -251,7 +246,7 @@
               <span class="company">Travefy</span>
               <span class="location">Lincoln, NE</span>
               <span class="timestamp">May 2013 - August 2013</span>
-              <p>Spent the summer at a startup company, Travefy, as Development and Systems Engineering Intern. I was one of only two software developers who pushed <a href="http://travefy.com">travefy.com</a> out of beta.</p>
+              <p>Spent the summer at a startup company, Travefy, as Development and Systems Engineering Intern. Was one of only two software developers who pushed <a href="http://travefy.com">travefy.com</a> out of beta.</p>
               <ul class="achievements">
                 <li>Designed and implemented a second server to handle emails. Was able to reduce page load times by up to 1000ms.</li>
                 <li>Created and maintained an automated build server which saved 10 minutes per deploy.</li>
@@ -269,7 +264,7 @@
               <span class="company">Powderhook</span>
               <span class="location">Lincoln, NE</span>
               <span class="timestamp">January - May</span>
-              <p>Spent the spring semester working at <a href="http://powderhook.com">Powderhook</a> as a Mobile Development Intern. I was the solo developer on the mobile team and was in charge of researching, designing, and creating an Android companion application for the site by the end of the school year. Helped develop a public API that the site and app could use.</p>
+              <p>Spent the spring semester working at <a href="http://powderhook.com">Powderhook</a> as a Mobile Development Intern. Was the sole developer on the mobile team and was in charge of researching, designing, and creating an Android companion application for the site by the end of the school year. Helped develop a public API that the site and app could use.</p>
               <ul class="achievements">
                 <li>Integrated Facebook, Google, and Twitter login into the app, avoiding web frames where possible.</li>
                 <li>Added customized Google Maps panels to the app. Optimized pre-fetching of markers and clustering.</li>
@@ -298,14 +293,15 @@
               <span class="headline">Graduation</span>
               <span class="location">Lincoln, NE</span>
               <span class="timestamp">May 2015</span>
-              Graduated from the University of Nebraska-Lincoln with a B.S. in Computer Science and Mathematics.
+              <p>Graduated from the University of Nebraska-Lincoln with a B.S. in Computer Science and Mathematics.</p>
             </div>
             
-            <div class="event job">
+            <div class="event job make-it-happen">
               <span class="company">Riot Games</span>
               <span class="location">Santa Monica, CA</span>
               <span class="timestamp">June 2015</span>
-              Started work at Riot Games. Maybe I'll help develop a mobile app to help summoners keep up with their Fantasy LCS teams, or strengthen the server architecture to keep gamers online 100% of the time. I may even get a chance to work on the game engine, or design Runetera's next Champion! Whatever I end up doing, I know I'll be living the dream working on the game I love.
+<!--              <p>Make it happen!</p>-->
+              <p>Started work at Riot Games. Maybe I'll help develop a mobile app to help summoners keep up with their Fantasy LCS teams, or strengthen the server architecture to keep gamers online 100% of the time. I may even get a chance to work on the game engine, or design Runetera's next Champion! Whatever I end up doing, I know I'll be living the dream working on the game I love.</p>
             </div>
           </div>
         </div>
@@ -314,21 +310,39 @@
     
     <section id="portfolio">
       <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="slideshow">
-              <div class="slide">
-                <h1>Powderhook Android Application</h1>
-                <img src="assets/powderhook-tri.png">
-                <p>This is an app blah blah</p>
-              </div>
-              <div class="slide">
-                <h1>Swiper Android Application</h1>
-                <img src="assets/swiper.jpg">
-                <p>Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
-              </div>
+        <div id="portfolio-carousel" class="carousel slide" data-ride="carousel" data-wrap="true">
+          
+          <!-- Wrapper for Slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+              <h1>Powderhook Android Application</h1>
+              <img src="assets/powderhook-tri.png">
+              
+              <p>This was the first Android application I developed. The Powderhook app lets the user browse the Powderhook listings map, update their info, and upload pictures to their profile. It offers sign-in through native Facebook, but falls back to a WebView when the user does not have the Facebook app installed. It also offers sign-in through native Google+, Twitter through WebView, and regular email and password sign-in.</p>
+
+              <p>The app interacts with the user's gallery and photos through intents, and automatically rotates images correctly when the user takes a landscape image. The map makes use of an optimized rendering system, which has to manage when to fetch new markers, how many to add, and how many to keep on the map in order to keep the app running smoothly.</p>
+            </div>
+            <div class="item">
+              <h1>Swiper Android Application</h1>
+              <img src="assets/swiper.jpg">
+              <p>This app came about beause I was inspired by the Tinder app design and wanted to replicate it. I was able to create a smooth and pleasing interface. The user can swipe cards left and right, and the "Yeah!" or "Nope!" labels fade in as they move to the side. When the user drags far enough, the card will slide off screen and the next card will pop up.</p>
+              <p>You can view the <a href="http://github.com/cable729/swiper">source code here</a>.</p>
+            </div>
+            <div class="item">
+              <h1>This Website</h1>
+              <img src="assets/this-website.png">
+              <p>I have little experience with graphic design, so this site was a huge learning opportunity for me. I learned some color schemes dos and don'ts and gained a much greater understanding of CSS.</p>
+              <p>You can view the <a href="http://github.com/cable729/calebjares">source code here</a>.</p>
             </div>
           </div>
+          
+          <!-- Controls -->
+          <a class="left carousel-control" href="#portfolio-carousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="#portfolio-carousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
         </div>
       </div>
     </section>
@@ -338,7 +352,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-4 photo">
-            <img src="assets/caleb.jpg" class="img-responsive">
+            <img src="assets/caleb.jpg">
           </div>
           <div class="col-sm-8 contact">
             <a href="mailto:cable729@gmail.com"><i class="fa fa-envelope"></i>Email me at cable729@gmail.com</a>
@@ -360,5 +374,14 @@
     <script type="text/javascript" src="scripts/modernizr-latest.js"></script>
     <script type="text/javascript" src="scripts/default.js"></script>
     <script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-45850565-2', 'riotgames-hire.me');
+      ga('send', 'pageview');
+    </script>
   </body>
 </html>

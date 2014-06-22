@@ -8,32 +8,12 @@ a { cursor: pointer; cursor: hand; }
 a.block-header { text-decoration: none; }
 
 /*Navbar*/
-.navbar {
-  background-color: rgba(51, 51, 51, 0);
-  border-style: none;
+#navbar .navbar-nav .active>a {
+  background-color: #4d4d4d;
 }
-.navbar .container {
+.navbar .container-fluid {
   padding-bottom: 0;
   padding-top: 0;
-  height: 50px;
-  text-align: center;
-}
-.navbar .center {
-  margin: auto;
-  display: inline-block;
-}
-.navbar a {
-  color: white;
-  text-decoration: none;
-  display: inline-block;
-  height: 100%;
-  line-height: 50px;
-  font-size: 24px;
-  padding: 0 20px;
-  margin: 0;
-  border: 1px solid white;
-  border-top: none;
-  -webkit-transform-origin: top;
 }
 
 #title-box h1 {
@@ -155,11 +135,9 @@ a.block-header { text-decoration: none; }
 .focus.dark b {
   color: #ff452d;
 }
-.focus.dark b.secondary {
-  color: #2195de;
-}
-.focus.dark b.riot {
-  color: #ff1e1e;
+.focus.dark a {
+  text-decoration: none;
+  color: inherit;
 }
 .block-header {
   display: block;
@@ -258,6 +236,20 @@ span.pun {
   border-style: solid;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.25);
+}
+.event.make-it-happen {
+  border-style: dashed;
+  cursor: pointer;
+}
+.event.make-it-happen:not(:hover) span,
+.event.make-it-happen:not(:hover) p {
+  color: rgba(0, 0, 0, 0);
+}
+.event.make-it-happen:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+.event p {
+  text-decoration: none;
 }
 .event .company, .event .headline {
   display: inline-block;
@@ -361,28 +353,38 @@ h1#caleb-contact-segue span {
   font-size: 18px;
 }
 
-/*Slideshow Section*/
-#work-display {
+/*Portfolio Section*/
+#portfolio {
   background: #d4d4d4;
 }
-.slideshow {
-}
 .slide {
+  padding-bottom: 20px;
 }
 .slide h1 {
   color: #333;
   text-align: center;
-/*  font-family: 'Dynalight'*/
+  margin-bottom: 40px;
 }
 .slide img {
-  margin: auto;
-  height: 400px;
+  margin: 20px auto;
+  width: auto; height: auto;
+  max-width: 90%; max-height: 400px;
   overflow: hidden;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+     -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
 }
 .slide p {
-  display: none;
+  margin: 0 auto 10px;
+  max-width: 600px;
+  color: #333;
 }
-
+#portfolio-carousel .carousel-control {
+  background-image: none;
+}
+#portfolio-carousel .carousel-control span {
+  color: #111;
+}
 
 
 #hire-me {
@@ -390,22 +392,7 @@ h1#caleb-contact-segue span {
   color: #000;
 }
 
-#next-up {
-  position: relative;
-  background-image: url(assets/wooden-keyboard-closeup.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
-#next-up .overlay {
-  background: rgba(72, 72, 72, 0.9);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
 #heres-why {
-/*  background-color: #f2e1e1;*/
   background-image: url(http://www.riotgames.com/sites/default/files/styles/home-rotator-slides/public/content/home-rotator/images/main/bg-carousel.jpg);
   background-size: cover;
 }
