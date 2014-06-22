@@ -318,36 +318,47 @@ h1#caleb-contact-segue span {
 }
 #contact-me .container {
   padding-top: 20px;
-}
-.photo img {
-  margin: 0 auto 20px;
-  height: 297px;
-  overflow: hidden;
-  border-style: solid;
-  border-color: #ccc;
-  border-width: 1px;
   color: #333;
 }
-.contact {
-  margin: 0;
+.personal p {
+  padding: 10px;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  background-color: white;
 }
-.contact a {
+.photo {
+  text-align: center;
+}
+.photo img {
+  max-height: 327px;
+  border-radius: 5px;
+  border: 2px solid #aaa;
+  margin-bottom: 20px;
+}
+.contact ul {
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  background-color: white;
+  padding: 0;
+}
+.contact li {
+  list-style: none;
+}
+.contact li a {
   text-decoration: none;
   display: block;
   font-size: 18px;
-  margin: 0 0 -1px 0;
   padding: 8px;
-  border-style: solid;
-  border-color: #ccc;
-  border-width: 1px;
   color: #333;
+}
+.contact li:not(:last-of-type) a {
+  border-bottom: 1px solid #aaa;  
 }
 .contact a:hover {
   color: #333;
   background-color: #ccc;
 }
 .contact a i {
-  color: #333;
   margin: 0 20px 0 8px;
   width: 20px;
   font-size: 18px;
