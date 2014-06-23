@@ -32,7 +32,7 @@
       <SCRIPT SRC="HTTPS://OSS.MAXCDN.COM/LIBS/RESPOND.JS/1.4.2/RESPOND.MIN.JS"></SCRIPT>
     <![ENDIF]-->
   </head>
-  <body data-spy="scroll" data-target="#navbar" data-offset="70">
+  <body>
     <div id="navbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -77,6 +77,7 @@
       $(function() {
         $('#intro-screen').height(window.innerHeight);
         $('#title-box').animate({ opacity: 0, y: '-400px' }, 0);
+        $('body').scrollspy({ target: '#navbar', offset: 70 });
         
         function setupSlideshow(){
           var currentIndex = 0;
