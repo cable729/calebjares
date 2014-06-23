@@ -16,13 +16,6 @@
   
   function doResize() {
     $('#intro-screen').height(window.innerHeight);
-    
-    if (window.innerWidth < 1000) {
-      // works for now
-      $('#heres-why .row').css('marginTop', 0);
-    } else {
-      $('#heres-why .row').css('marginTop', window.innerWidth / 10);
-    }
   }
   
 //  thanks to https://coderwall.com/p/uf2pka
