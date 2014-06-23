@@ -243,6 +243,7 @@ span.pun {
 }
 .easter { color: rgba(0,0,0,0); float: right; }
 .event.make-it-happen:not(:hover) span,
+.event.make-it-happen:not(:hover) li,
 .event.make-it-happen:not(:hover) p {
   color: rgba(0, 0, 0, 0);
 }
