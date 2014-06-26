@@ -181,18 +181,22 @@ a.block-header:hover { color: #fff; border-style: solid; border-width: 1px; bord
   font-size: 50px;
 }
 .skill {
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
   position: relative;
-  margin: 0 auto 0;
+  margin: 0 auto 20px;
   cursor: default;
+}
+.skill canvas, .skill {
+  transform-origin: 50px 50px;
+  -webkit-transform-origin: 60px 90px;
 }
 .skill span {
   line-height: normal;
   font-family: 'Lato', "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
   width: 60%;
   text-align: center;
-  font-size: 36px;
+  font-size: 24px;
   color: #333;
   position: absolute;
   left: 50%;
@@ -201,12 +205,32 @@ a.block-header:hover { color: #fff; border-style: solid; border-width: 1px; bord
   -ms-transform: translateY(-50%) translateX(-50%);
   transform: translateY(-50%) translateX(-50%);
 }
+.skill span.desc {
+  opacity: 0;
+/*  color: #ff452d;*/
+}
 span.pun {
   color: #ff452d;
 }
 
 
 /* Timeline Section */
+.segue {
+  font-family: 'Dynalight';
+  font-size: 56px;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+.segue a {
+  text-decoration: none;
+  display: block;  
+}
+.segue.light { background-color: #333; }
+.segue.light a { color: white; }
+.segue.light a span { color: #13a3d3; }
+
 #my-timeline {
   background-image: linear-gradient(#171717,#2a2a2a);
 }
@@ -215,7 +239,7 @@ span.pun {
   margin: 20px auto;
   text-align: center;
   font-family: 'Oswald';
-  color: #dc291e;
+  color: #cff1ff;
 }
 .year:after {
   margin: 10px;
@@ -256,7 +280,7 @@ span.pun {
 .event .company, .event .headline {
   display: inline-block;
   font-size: 28px;
-  color: #ff2b22;
+  color: #13a3d3;
   margin-top: -10px;
 }
 .event .timestamp {
@@ -314,9 +338,13 @@ h1#caleb-contact-segue {
   color: #fff;
   font-size: 50px;
   margin: 0;
+  cursor: pointer;
 }
-h1#caleb-contact-segue span {
+h1#caleb-contact-segue span:not(.first) {
   color: #f52f0b;
+}
+h1#caleb-contact-segue span.extra {
+  display: none;
 }
 #contact-me .container {
   padding-top: 20px;
@@ -358,7 +386,7 @@ h1#caleb-contact-segue span {
 }
 .contact a:hover {
   color: #333;
-  background-color: #ccc;
+  background-color: rgba(19, 163, 211, 0.35);
 }
 .contact a i {
   margin: 0 20px 0 8px;

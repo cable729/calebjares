@@ -8,6 +8,7 @@
     setupEvents();
     doResize();
     carouselNormalization();
+    setupExtra();
     
     $('.block-header').fitText(1.15, { minFontSize: '56px' });
   });
@@ -58,59 +59,72 @@
   function setupKnobAnimations() {
     $('.skill').hover(
       function over() {
-        $(this).find('canvas').transition({ rotate: '1turn' }, 800);
+        if (!$(this).find('canvas').hasClass('animating')) {
+          $(this).find('canvas').transition({ rotate: '1turn' }, 800).addClass('animating');
+          $(this).find('span:first-of-type').transition({ opacity: 0 }, 800);
+          $(this).find('span.desc').transition({ opacity: 1 }, 800);
+        }
       },
       function out() {
-        $(this).find('canvas').transition({ rotate: '0turn' }, 500);
+        $(this).find('canvas').transition({ rotate: '0turn' }, 500, function() {
+          $(this).removeClass('animating');
+        });
+        $(this).find('span:first-of-type').transition({ opacity: 1 }, 500);
+        $(this).find('span.desc').transition({ opacity: 0 }, 500);
       }
     );
   }
   
   function setupKnobs() {
     $('.dial').knob({
-      readOnly: true,
-      width: '200',
-      displayInput: false,
-      fgColor: '#333',
-      thickness: '0.15',
-      draw : function () {
-          var a = this.angle(this.cv)  // Angle
-              , sa = this.startAngle          // Previous start angle
-              , sat = this.startAngle         // Start angle
-              , ea                            // Previous end angle
-              , eat = sat + a                 // End angle
-              , r = true;
+//    .each(function(e){
+//      var color = $(this).parent().hasClass('important') ? '#ff452d' : '#333';
+      
+//      $(this).knob({
+        readOnly: true,
+        width: 120,
+        displayInput: false,
+        fgColor: '#333',
+        thickness: '0.15',
+        draw : function () {
+            var a = this.angle(this.cv)  // Angle
+                , sa = this.startAngle          // Previous start angle
+                , sat = this.startAngle         // Start angle
+                , ea                            // Previous end angle
+                , eat = sat + a                 // End angle
+                , r = true;
 
-          this.g.lineWidth = this.lineWidth;
+            this.g.lineWidth = this.lineWidth;
 
-          this.o.cursor
-              && (sat = eat - 0.3)
-              && (eat = eat + 0.3);
+            this.o.cursor
+                && (sat = eat - 0.3)
+                && (eat = eat + 0.3);
 
-          if (this.o.displayPrevious) {
-              ea = this.startAngle + this.angle(this.value);
-              this.o.cursor
-                  && (sa = ea - 0.3)
-                  && (ea = ea + 0.3);
-              this.g.beginPath();
-              this.g.strokeStyle = this.previousColor;
-              this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
-              this.g.stroke();
-          }
+            if (this.o.displayPrevious) {
+                ea = this.startAngle + this.angle(this.value);
+                this.o.cursor
+                    && (sa = ea - 0.3)
+                    && (ea = ea + 0.3);
+                this.g.beginPath();
+                this.g.strokeStyle = this.previousColor;
+                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
+                this.g.stroke();
+            }
 
-          this.g.beginPath();
-          this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ; // ff452d
-          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
-          this.g.stroke();
+            this.g.beginPath();
+            this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ; // ff452d
+            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
+            this.g.stroke();
 
-          this.g.lineWidth = 2;
-          this.g.beginPath();
-          this.g.strokeStyle = this.o.fgColor;
-          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
-          this.g.stroke();
+            this.g.lineWidth = 2;
+            this.g.beginPath();
+            this.g.strokeStyle = this.o.fgColor;
+            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+            this.g.stroke();
 
-          return false;
-      }
+            return false;
+        }
+//      });
     });
   }
   
@@ -132,6 +146,13 @@
     });
   };
 
+  function setupExtra() {
+    $('h1#caleb-contact-segue').click(function() {
+      $(this).find('span.extra').css('display', 'inline');
+      $(this).find('span.first').text('Thank you');
+    });
+  }
+  
   function animateChevron(){
     var chevron = $('.arrow');
     animateIt();
